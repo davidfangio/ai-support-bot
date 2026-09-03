@@ -16,7 +16,6 @@ def chat():
 
     return f"Robbie recebeu: {mensagem}"
 
-
     
 
 
