@@ -3,4 +3,6 @@ from openai import OpenAI
 
 load_dotenv()
 
-client = OpenAI()
+
+def responder(mensagem):
+    return f"Robbie recebeu: {mensagem}"

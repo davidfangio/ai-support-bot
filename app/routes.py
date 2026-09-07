@@ -1,4 +1,5 @@
 from flask import Blueprint, request 
+from app.chatbot import responder 
 
 main = Blueprint("main", __name__)
 
@@ -9,12 +10,18 @@ def home ():
 @main.route("/chat", methods=["POST"])
 def chat():
     dados = request.json
+
     if not dados or "mensagem" not in dados:
         return "Robbie precisa de uma mensagem para responder.", 400
 
     mensagem = dados["mensagem"]
 
-    return f"Robbie recebeu: {mensagem}"
+    resposta = responder(mensagem)
+
+    return resposta
+
+
+
 
     
 
