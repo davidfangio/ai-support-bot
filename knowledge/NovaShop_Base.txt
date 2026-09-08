@@ -1,0 +1,391 @@
+﻿NovaShop — Manual Empresarial e Base de Conhecimento Institucional
+________________
+Versão do Documento: 1.0
+Status: Documento Oficial de Referência Corporativa
+Última Atualização: Setembro de 2026
+
+
+Aviso de Escopo Corporativo: Este documento constitui a fonte oficial de verdade (Single Source of Truth) sobre a estrutura, operação, políticas comerciais, catálogo de produtos e ecossistema institucional da NovaShop. Seu objetivo é consolidar o conhecimento sobre a empresa para fins de governança e integração com sistemas de inteligência artificial de suporte ao cliente.
+ 
+1. IDENTIDADE DA EMPRESA
+________________
+1.1 Visão Geral
+* Nome Comercial: NovaShop
+* Razão Social: NovaShop Comércio Eletrônico de Tecnologia Ltda.
+* Segmento: E-commerce de Tecnologia e Eletrônicos de Consumo
+* Modelo de Negócio: B2C (Business-to-Consumer), focado na venda direta ao consumidor final via ambiente digital.
+* Tipo de Operação: Pure Play E-commerce (100% digital, centralizado em ecossistema web e mobile, com centro de distribuição próprio).
+* Abrangência: Atendimento e entregas em 100% do território nacional brasileiro.
+1.2 Público-Alvo e Posicionamento
+A NovaShop posiciona-se no mercado brasileiro como uma loja virtual de tecnologia intermediária-premium. A empresa atende a um público moderno, conectado e exigente, composto por estudantes, profissionais de home office, gamers casuais, entusiastas de tecnologia e criadores de conteúdo que buscam curadoria técnica, garantia real e transparência logística.
+Diferente dos grandes marketplaces generalistas que operam sem padronização de vendedores terceirizados, a NovaShop atua com estoque próprio e curadoria especializada, eliminando a incerteza do consumidor quanto à procedência, autenticidade e pós-venda dos produtos.
+1.3 Filosofia Institucional
+* Propósito: Desmistificar a tecnologia e torná-la acessível e funcional no cotidiano das pessoas, unindo curadoria especializada a uma jornada de compra transparente.
+* Missão: Conectar pessoas e profissionais às melhores soluções tecnológicas do mercado, garantindo um processo de compra simples, entregas ágeis e suporte humano resolutivo.
+* Visão: Ser reconhecida nacionalmente como o e-commerce de tecnologia de médio porte mais confiável e eficiente do Brasil até 2028, liderando índices de satisfação de pós-venda.
+* Valores:
+   * Transparência Radical: Comunicação clara sobre prazos, custos, especificações e limitações de produtos.
+   * Clareza Técnica: Tradução do "tecniquês" para uma linguagem acessível e prática.
+   * Respeito ao Cliente: Cumprimento rigoroso do Código de Defesa do Consumidor e resolução ágil de problemas.
+   * Eficiência Operacional: Rigor nos processos logísticos e na integridade do estoque.
+1.4 Diferenciais Competitivos
+1. Estoque 100% Próprio e Físico: Nenhum produto é comercializado sem estar presente no Centro de Distribuição da empresa, garantindo envio imediato.
+2. Curadoria Técnica Rígida: Cada item do catálogo passa por validação de compatibilidade e testes de qualidade antes do cadastro.
+3. Embalagem Reforçada Anti-Impacto: Protocolos de embalagem específicos para itens sensíveis (monitores, componentes e notebooks).
+4. Transparência de Rastreamento: Atualizações ativas por e-mail e painel do cliente a cada mudança de status logístico.
+1.5 Tom de Voz e Personalidade da Marca
+A personalidade da NovaShop é moderna, confiável, acessível, didática e focada na solução. O tom institucional é ágil, empático e extremamente claro, evitando rodeios corporativos desnecessários ou jargões técnicos indecifráveis para o consumidor leigo.
+ 
+2. HISTÓRIA E CONTEXTO
+________________
+A NovaShop foi fundada em 2022 na cidade de Campinas/SP por três profissionais das áreas de Engenharia de Software e Logística. A motivação inicial surgiu da observação de uma lacuna crítica no e-commerce brasileiro: o cliente interessado em eletrônicos frequentemente precisava escolher entre a variedade despadronizada de marketplaces terceirizados (com riscos de falsificação e suporte ineficiente) ou o alto custo de grandes varejistas tradicionais.
+A operação começou em um galpão modesto de 200 m², focando exclusivamente em periféricos de alta demanda (teclados, mouses e fones). A proposta de valor centrada no envio rápido (despacho em até 24h úteis) e descrições detalhadas de compatibilidade gerou tração rápida entre estudantes universitários e profissionais de TI da região de Campinas e São Paulo.
+Em 2024, a empresa expandiu sua estrutura para um Centro de Distribuição de 1.500 m² no polo logístico de Jundiaí/SP, permitindo a entrada nas categorias de notebooks, monitores e smartphones. Atualmente, a NovaShop é um e-commerce consolidado de porte médio, processando milhares de pedidos mensais para todo o Brasil, com foco estratégico em manter a excelência operacional e a satisfação do cliente.
+ 
+3. OPERAÇÃO
+________________
+A operação da NovaShop funciona em um ciclo de integração total entre a plataforma de e-commerce e o sistema WMS (Warehouse Management System) do Centro de Distribuição em Jundiaí/SP.
+Fluxo Operacional Integrado
+Etapa
+	Local/Sistema
+	Descrição da Atividade
+ 
+	1. Venda e Reserva
+	Loja Virtual (Web/Mobile)
+	O cliente realiza o pedido. O sistema reserva instantaneamente a unidade no estoque do WMS.
+	2. Liberação Financeira
+	Gateway de Pagamento
+	Validação antifraude e aprovação do pagamento (Pix, Cartão ou Boleto).
+	3. Faturamento
+	Sistema ERP
+	Emissão automatizada da Nota Fiscal Eletrônica (NF-e) e envio por e-mail ao cliente.
+	4. Picking (Separação)
+	Centro de Distribuição
+	Operadores realizam a coleta do item utilizando leitura de código de barras (SKU).
+	5. Packing (Embalagem)
+	Estação de Embalagem
+	Verificação de integridade física e acondicionamento em caixa reforçada com manta bolha.
+	6. Expedição
+	Doca de Saída
+	Coleta diária pelas transportadoras parceiras (JADLOG, Total Express, Azul Cargo, Correios).
+	7. Pós-Venda
+	Central de Atendimento
+	Monitoramento do status de entrega e suporte técnico/garantia dedicado.
+	 
+4. CATÁLOGO DE PRODUTOS
+________________
+O catálogo da NovaShop é dividido em 6 categorias principais. Todos os produtos vendidos comercializados como marca própria fictícia da NovaShop ou parcerias exclusivas acompanham garantia legal e contratual, Nota Fiscal e manual em português.
+4.1 Visão Geral das Categorias
+Categoria
+	Perfil de Consumidor
+	Faixa de Preço Média
+	Critério Principal de Escolha
+ 
+	Smartphones
+	Usuários urbanos, estudantes e profissionais
+	R$ 1.200,00 a R$ 4.500,00
+	Autonomia de bateria, qualidade de câmera e armazenamento
+	Notebooks
+	Profissionais de home office, estudantes e criadores
+	R$ 2.800,00 a R$ 8.900,00
+	Desempenho do processador, memória RAM e portabilidade
+	Fones de Ouvido
+	Trabalhadores remotos, Gamers e praticantes de esportes
+	R$ 180,00 a R$ 850,00
+	Cancelamento de ruído, qualidade sonora e conforto
+	Teclados e Mouses
+	Programadores, digitadores e gamers
+	R$ 120,00 a R$ 650,00
+	Ergonomia, tipo de switch (mecânico) e precisão do sensor
+	Monitores
+	Designers, programadores e entusiastas de jogos
+	R$ 750,00 a R$ 3.200,00
+	Fidelidade de cor (sRGB/IPS), taxa de atualização (Hz) e tamanho
+	Acessórios
+	Público geral de tecnologia
+	R$ 45,00 a R$ 350,00
+	Compatibilidade, durabilidade e velocidade de transferência/carga
+	4.2 Fichas Técnicas de Produtos Fictícios Relevantes
+1. Smartphone NovaPulse Z10
+* Categoria: Smartphones | SKU: PHN-NPZ10-128
+* Preço: R$ 2.199,00
+* Descrição: Smartphone intermediário premium focado em alta autonomia e fluidez visual para o dia a dia e trabalho.
+* Especificações: Tela AMOLED de 6,5" FHD+ (120Hz), Processador Octa-Core NovaCore T820, 8GB RAM, 128GB Armazenamento Interno, Câmera Tripla de 64MP + 8MP (Ultra-Wide) + 2MP (Macro), Câmera Frontal 16MP, Bateria de 5.000 mAh com Carregamento Rápido de 33W, Conectividade 5G, Wi-Fi 6 e Bluetooth 5.2. Suporte a Dual SIM (Nano-SIM).
+* Compatibilidade: Compatível com todas as operadoras brasileiras (frequências 5G/4G/3G). Conteúdo sincronizável com Android/Windows/macOS via USB-C.
+* Conteúdo da Embalagem: 1x Smartphone NovaPulse Z10, 1x Carregador Rápido 33W, 1x Cabo USB-C para USB-C, 1x Capa Protetora de Silicone Transparente, 1x Ferramenta de Ejeção de SIM, 1x Manual do Usuário.
+* Garantia: 12 meses (3 meses legal + 9 meses do fabricante).
+2. Notebook NovaBook Pro 15
+* Categoria: Notebooks | SKU: NTB-NBP15-i7
+* Preço: R$ 4.899,00
+* Descrição: Laptop ultrafino projetado para produtividade pesada, multitarefa profissional e edição de mídia leve.
+* Especificações: Tela IPS 15,6" Full HD Anti-reflexo, Processador Intel Core i7 12ª Geração (10 cores), 16GB RAM DDR4 (expansível até 32GB), SSD 512GB NVMe M.2, Placa de Vídeo Integrada Intel Iris Xe, Teclado Retroiluminado ABNT2 com teclado numérico, Bateria de 57Wh (autonomia de até 8 horas), Wi-Fi 6, Bluetooth 5.1, Portas: 1x USB-C (DisplayPort + Power Delivery), 2x USB 3.2, 1x HDMI 2.0, 1x P2 Áudio, Leitor de Cartão SD. Peso: 1,65 kg. Sistema Operacional: Windows 11 Home.
+* Compatibilidade: Suporta monitores externos até 4K 60Hz via HDMI ou USB-C. Compatível com docks USB-C universais.
+* Conteúdo da Embalagem: 1x Notebook NovaBook Pro 15, 1x Fonte Carregadora USB-C de 65W, 1x Guia Rápido de Inicialização.
+* Garantia: 12 meses.
+3. Fone de Ouvido NovaSound Wave NC
+* Categoria: Fones de Ouvido | SKU: AUD-NSW-NC01
+* Preço: R$ 549,00
+* Descrição: Headphone Bluetooth Over-Ear com Cancelamento Ativo de Ruído (ANC) para trabalho, estudos e viagens.
+* Especificações: Drivers de 40mm de Neodímio, Cancelamento Ativo de Ruído de até -30dB, Bluetooth 5.3, Modo Transparência, Autonomia de Bateria: até 40 horas (ANC desligado) e 28 horas (ANC ligado), Carregamento Rápido (10 min de carga = 4h de uso), Microfone Embutido com Redução de Ruído por IA para chamadas, Conector Auxiliar 3.5mm.
+* Compatibilidade: Bluetooth compatível com iOS, Android, Windows, macOS e Smart TVs.
+* Conteúdo da Embalagem: 1x Headphone NovaSound Wave NC, 1x Estojo Rígido de Transporte, 1x Cabo de Áudio P2/P2 (3.5mm), 1x Cabo de Carga USB-A para USB-C, 1x Manual de Instruções.
+* Garantia: 12 meses.
+4. Teclado Mecânico NovaType Pro RGB
+* Categoria: Teclados e Mouses | SKU: PER-NTP-RGBM
+* Preço: R$ 389,00
+* Descrição: Teclado mecânico de alta precisão com switches silenciosos e construção em alumínio, ideal para digitação e jogos.
+* Especificações: Formato TKL (80% sem teclado numérico), Padrão ABNT2 (com tecla Ç), Switches Mecânicos Red (tátil linear e silencioso, vida útil de 50 milhões de cliques), Iluminação RGB Por Tecla com 18 modos, Keycaps Double-Shot PBT, Cabo Removível USB-C de 1,8m trançado, Anti-Ghosting N-Key Rollover.
+* Compatibilidade: Plug and Play em Windows, macOS e Linux. (Software de customização de iluminação exclusivo para Windows).
+* Conteúdo da Embalagem: 1x Teclado NovaType Pro RGB, 1x Cabo USB-C para USB-A de 1,8m, 1x Extrator de Keycaps, 1x Extrator de Switches, 2x Switches Red sobressalentes, 1x Manual.
+* Garantia: 12 meses.
+5. Monitor NovaView Ultra 27"
+* Categoria: Monitores | SKU: MON-NVU-27QHD
+* Preço: R$ 1.699,00
+* Descrição: Monitor profissional de 27 polegadas Quad HD, projetado para precisão de cor e amplo espaço de trabalho.
+* Especificações: Painel IPS 27", Resolução Quad HD (2560x1440), Taxa de Atualização de 100Hz, Tempo de Resposta de 1ms (VRB), Cobertura 99% sRGB, Brilho 300 nits, Contraste 1000:1, Entradas: 2x HDMI 2.0, 1x DisplayPort 1.2, 1x Saída de Áudio 3.5mm. Ajuste de Inclinação (-5° a +20°), Furação VESA 100x100mm. Tecnologias Flicker-Free e Low Blue Light.
+* Compatibilidade: Suporte a placas de vídeo AMD e NVIDIA via Adaptive-Sync. Compatível com suportes articulados VESA.
+* Conteúdo da Embalagem: 1x Monitor NovaView Ultra 27", 1x Base/Suporte de Mesa, 1x Cabo HDMI 2.0, 1x Cabo DisplayPort, 1x Cabo de Alimentação, 1x Guia de Montagem.
+* Garantia: 12 meses.
+6. Hub USB-C NovaDock 7 em 1
+* Categoria: Acessórios | SKU: ACC-NDK-7IN1
+* Preço: R$ 229,00
+* Descrição: Adaptador multiportas compacto em alumínio para expansão de conectividade em notebooks e tablets USB-C.
+* Especificações: Conexão Host: USB-C Integrado. Portas de Saída: 1x HDMI (suporte a 4K 60Hz), 1x USB-C Power Delivery (até 100W de passagem de carga), 2x USB-A 3.0 (5Gbps), 1x Leitor de Cartão SD, 1x Leitor de Cartão MicroSD (TF), 1x Porta Ethernet RJ45 (Gigabit 10/100/1000 Mbps). Corpo em Alumínio Anodizado Cinza Espacial.
+* Compatibilidade: Compatível com MacBooks, notebooks Windows/ChromeOS, iPads com porta USB-C e smartphones com suporte a modo desktop (DisplayPort Alt Mode).
+* Conteúdo da Embalagem: 1x Hub USB-C NovaDock 7 em 1, 1x Case de Veludo para Transporte, 1x Manual.
+* Garantia: 6 meses.
+ 
+5. PÚBLICO-ALVO (PERSONAS EMPRESARIAIS)
+________________
+Persona 1: Lucas Henrique — O Profissional de Home Office
+* Perfil: 29 anos, Analista de Sistemas, trabalha 100% remoto de sua residência em Curitiba/PR.
+* Necessidades: Equipamentos confiáveis e ergonômicos para longas jornadas de trabalho (teclados confortáveis, monitores duplos e fones com isolamento de ruído).
+* Hábitos de Compra: Pesquisa especificações técnicas detalhadas antes de comprar. Valoriza agilidade na emissão da Nota Fiscal para reembolso corporativo.
+* Dúvidas Frequentes: Compatibilidade entre hubs USB-C e MacBooks/Windows; se o monitor possui ajuste de altura; garantia estendida.
+* Dificuldades: Insegurança quanto ao prazo de entrega e medo de receber telas de monitor danificadas no transporte.
+Persona 2: Camila Silveira — A Estudante Universitária
+* Perfil: 22 anos, estudante de Arquitetura em São Paulo/SP.
+* Necessidades: Notebook com boa capacidade de processamento gráfico para softwares de modelagem e facilidade de transporte.
+* Hábitos de Compra: Sensível a preço e frete; busca constantemente cupons de desconto e prefere pagamento via Pix devido ao desconto e aprovação imediata.
+* Dúvidas Frequentes: Se o notebook roda programas específicos; qual o prazo exato de entrega para seu CEP; opções de parcelamento no cartão.
+* Dificuldades: Orçamento limitado e dúvida sobre as políticas de devolução em caso de inadequação do produto.
+Persona 3: Marcelo Ramos — O Entusiasta Gamer e Criador de Conteúdo
+* Perfil: 34 anos, Engenheiro e streamer nas horas vagas, morador de Belo Horizonte/MG.
+* Necessidades: Periféricos de alto desempenho (monitores com alta taxa de atualização, teclados mecânicos rápidos e headphones com excelente resposta de frequência).
+* Hábitos de Compra: Exigente quanto à marca dos componentes e switches. Compra com alta frequência e valoriza embalagens bem protegidas.
+* Dúvidas Frequentes: Qual o switch exato do teclado; taxa de resposta real do monitor em milissegundos; disponibilidade de estoque imediato.
+* Dificuldades: Frustração quando os detalhes técnicos do produto são omissos ou genéricos no site.
+ 
+6. CANAIS DE ATENDIMENTO E HORÁRIOS
+________________
+A NovaShop adota um modelo de atendimento híbrido: disponibilidade digital contínua (24/7) para consulta de informações e autoatendimento, complementada por uma equipe humana especializada para demandas complexas.
+Estrutura de Canais de Atendimento
+Canal
+	Tipo de Atendimento
+	Horário de Funcionamento
+	Escopo de Atuação
+ 
+	Loja Virtual (Portal)
+	Autoatendimento / Bot
+	24 horas por dia, 7 dias por semana
+	Navegação, compras, consulta de status e abertura de solicitações.
+	E-mail Oficial (suporte@novashop.com.br)
+	Humano / Assíncrono
+	Segunda a Sexta: 08:00 às 20:00
+Sábados: 09:00 às 15:00
+	Suporte técnico, trocas, devoluções, sinistros de transporte e análise financeira. (Prazo de resposta: até 1 dia útil).
+	Central de Atendimento / Chat Humano
+	Humano / Síncrono
+	Segunda a Sexta: 08:00 às 18:00
+(Exceto feriados nacionais)
+	Dúvidas técnicas avançadas, alteração emergencial de pedido, mediação de reembolsos.
+	 
+7. PROCESSO DE COMPRA
+________________
+O fluxo de compra na NovaShop foi projetado para assegurar máxima clareza técnica e segurança em 12 passos auditáveis:
+1. Navegação pelo Catálogo: O cliente navega por categorias ou utiliza a busca direta por SKU ou palavra-chave.
+2. Seleção do Produto: Abertura da página detalhada contendo fotos reais, ficha técnica, compatibilidade e estoque atual.
+3. Inclusão no Carrinho: O cliente insere o item no carrinho de compras. A inclusão no carrinho não reserva o produto no estoque.
+4. Simulação de Frete: Inserção do CEP para cálculo automático de prazos e valores por transportadora.
+5. Autenticação do Cliente: Login com e-mail/senha ou cadastro rápido com validação de CPF.
+6. Definição do Endereço de Entrega: Seleção de endereço cadastrado ou adição de novo CEP destinatário.
+7. Escolha da Modalidade de Pagamento: Seleção entre Pix, Cartão de Crédito ou Boleto Bancário.
+8. Revisão e Confirmação do Pedido: Verificação final de itens, valores, descontos, endereço e aceite dos termos de compra.
+9. Processamento Financeiro: Validação do pagamento junto à instituição financeira/gateway antifraude.
+10. Faturamento e Separação (Picking/Packing): Emissão da Nota Fiscal Eletrônica (NF-e) e embalagem do produto no CD.
+11. Coleta e Expedição: Transferência do volume para a transportadora selecionada e geração do código de rastreio.
+12. Rastreamento e Entrega: Acompanhamento do deslocamento até a confirmação de entrega no endereço final.
+ 
+8. POLÍTICA DE PAGAMENTOS
+________________
+A NovaShop trabalha com as três modalidades principais de pagamento no mercado brasileiro, aplicando protocolos de validação específicos para cada uma.
+Comparativo de Formas de Pagamento
+Modalidade
+	Prazo de Confirmação
+	Regras e Condições
+	Tratamento de Falhas / Expiração
+ 
+	Pix
+	Até 15 minutos (Instantâneo)
+	5% de desconto no valor final dos produtos. QR Code dinâmico válido por 30 minutos.
+	Se não pago em 30 minutos, o QR Code expira, a reserva do item é cancelada e o pedido é anulado automaticamente.
+	Cartão de Crédito
+	De imediato até 24 horas úteis
+	Aceitas as bandeiras Visa, Mastercard, Elo, Hipercard e Amex. Parcelamento em até 10x sem juros (parcela mínima de R$ 50,00).
+	Recusas por falta de limite ou bloqueio do emissor geram notificação imediata. Pedidos em análise antifraude podem exigir confirmação via SMS/App.
+	Boleto Bancário
+	De 1 a 2 dias úteis após o pagamento
+	Vencimento em 1 dia útil após a emissão. Não permite parcelamento. Emissão via banco conveniado.
+	Se o boleto não for compensado até a data limite, o pedido é cancelado automaticamente sem custos ao cliente.
+	 
+9. ENTREGA E LOGÍSTICA
+________________
+A logística da NovaShop é operada exclusivamente a partir de seu Centro de Distribuição em Jundiaí/SP, garantindo consolidação de volumes e controle de qualidade pré-envio.
+9.1 Prazos e Modalidades de Frete
+* Frete Express: Atende capitais e regiões metropolitanas das regiões Sudeste e Sul. Prazo estimado de 1 a 3 dias úteis após a expedição.
+* Frete Padrão (Econômico): Atende todo o território nacional. Prazo estimado de 4 a 12 dias úteis a depender do CEP.
+* Frete Especial (Norte e Nordeste): Prazo estimado de 6 a 15 dias úteis a depender da localidade.
+9.2 Regras e Protocolos de Entrega
+* Cálculo do Frete: Baseado nas dimensões da caixa (comprimento, largura, altura), peso bruto do produto e distância geográfica do CEP de destino.
+* Tentativas de Entrega: As transportadoras parceiras realizam até 3 (três) tentativas de entrega em dias úteis consecutivos.
+* Impossibilidade de Entrega: Caso as 3 tentativas falhem (cliente ausente, endereço incorreto ou recusa), o pacote retorna ao Centro de Distribuição em Jundiaí/SP. O reencontro dependerá do pagamento de um novo frete pelo cliente, exceto em casos de erro comprovado da NovaShop.
+* Atrasos Operacionais: Podem ocorrer motivados por fatores de força maior (chuvas extremas, interrupções em rodovias ou greves). Nestes casos, a equipe de logística emite um alerta ao cliente com a nova data estimada.
+ 
+10. GESTÃO DE PEDIDOS
+________________
+10.1 Mapeamento do Ciclo de Vida do Pedido
+Status do Pedido
+	Significado Operacional
+ 
+	Aguardando Pagamento
+	Pedido gerado no sistema, aguardando compensação do Pix, Boleto ou aprovação do Cartão.
+	Pagamento Aprovado
+	Transação financeira confirmada. O pedido entra na fila de faturamento.
+	Em Processamento
+	Nota Fiscal Eletrônica (NF-e) gerada. Dados enviados ao WMS do Centro de Distribuição.
+	Em Separação
+	Produto sendo coletado e embalado nas estações do armazém.
+	Enviado / Em Transporte
+	Volume entregue à transportadora responsável. Código de rastreamento ativo.
+	Entregue
+	Confirmação de recebimento registrada no sistema da transportadora com assinatura/documento do recebedor.
+	Cancelado
+	Pedido anulado por falta de pagamento, solicitação do cliente ou divergência cadastral.
+	Devolvido
+	Pacote retornado ao CD devido a arrependimento, logística reversa ou falha nas tentativas de entrega.
+	10.2 Trativa de Exceções Logísticas e Operacionais
+* Alteração de Endereço: Só é permitida antes da emissão da Nota Fiscal Eletrônica (status "Pagamento Aprovado"). Após a emissão da NF-e e envio do pacote, por razões tributárias, o endereço de destino não pode ser alterado.
+* Cancelamento Pré-Envio: Pode ser solicitado diretamente pelo painel do cliente se o status for "Aguardando Pagamento" ou "Pagamento Aprovado". O reembolso é processado integralmente.
+* Pedido Entregue Incorretamente (Divergência de Endereço/Recebedor): Caso o rastreio conste como "Entregue", mas o cliente alegar não ter recebido, a NovaShop abre uma acareação junto à transportadora no prazo de até 48 horas úteis para obter o comprovante físico/digital de assinatura. Se confirmada extravio ou entrega em endereço errado por falha do transportador, um novo envio é realizado sem custos adicionais.
+ 
+11. POLÍTICA DE TROCAS, DEVOLUÇÕES E REEMBOLSOS
+________________
+A política da NovaShop está integralmente alinhada com a Lei Federal nº 8.078/1990 (Código de Defesa do Consumidor) e com o Decreto do Comércio Eletrônico (Decreto nº 7.962/2013).
+11.1 Direito de Arrependimento (Devolução sem Motivo)
+* Prazo Legítimo: Até 7 (sete) dias corridos, contados a partir da data de recebimento do produto pelo consumidor (registrada no rastreio).
+* Condição do Produto: O item deve ser devolvido em sua embalagem original, acompanhado de todos os acessórios, manuais, cabos, brindes e da Nota Fiscal de compra. O produto não pode apresentar sinais de mau uso ou danos físicos provocados pelo cliente.
+* Custo de Frete: Na devolução por arrependimento dentro do prazo legal, o custo do frete de devolução (Logística Reversa) é 100% arcar pela NovaShop.
+11.2 Trocas por Defeito ou Avaria
+* Produto Avariado no Transporte: O cliente deve recusar a entrega caso a caixa esteja rasgada, amassada ou violada. Se constatar o dano após a abertura, deve contatar o suporte em até 48 horas úteis com fotos e vídeos da embalagem e do produto.
+* Produto Incompleto ou Errado: Notificação em até 7 dias corridos. A NovaShop envia o item correto ou as peças faltantes via frete prioritário após o recolhimento do produto incorreto.
+11.3 Procedimento e Modalidades de Reembolso
+Após o recebimento do produto devolvido no Centro de Distribuição em Jundiaí/SP, a equipe de triagem realiza a inspeção técnica do item no prazo de até 3 (três) dias úteis.
+Forma de Pagamento Original
+	Método de Reembolso / Estorno
+	Prazo de Conclusão
+ 
+	Pix
+	Transferência Pix para a mesma conta de origem do pagamento.
+	Até 2 dias úteis após aprovação da inspeção.
+	Boleto Bancário
+	Depósito/Pix na conta bancária do titular do CPF comprador.
+	Até 3 dias úteis após envio dos dados bancários do titular.
+	Cartão de Crédito
+	Solicitação de estorno enviada à administradora do cartão.
+	Estorno creditado em até 2 faturas subsequentes (dependendo da data de fechamento da fatura do cliente).
+	 
+12. POLÍTICA DE GARANTIA
+________________
+Todos os produtos comercializados pela NovaShop possuem garantia contra defeitos de fabricação.
+12.1 Prazos de Garantia
+* Garantia Legal: 90 (noventa) dias obrigatórios por lei (Art. 26 do CDC) para bens duráveis.
+* Garantia Contratual NovaShop: Complemento fornecido pela loja para totalizar 12 (doze) meses de garantia total na maioria das categorias (Smartphones, Notebooks, Fones de Ouvido, Teclados e Monitores) e 6 (seis) meses para a categoria de Acessórios (Hubs, Cabos).
+12.2 Cobertura da Garantia
+* O que está COBERTO: Defeitos de fabricação no hardware, falhas de componentes internos sem causa externa, vicios ocultos de montagem, travamentos de tela por defeito do painel e falhas de carregamento decorrentes de defeito na placa do aparelho.
+* O que NÃO está COBERTO:
+   * Danos físicos decorrentes de quedas, impactos, pressões excessivas ou derramamento de líquidos.
+   * Uso do equipamento em voltagem incorreta ou surtos elétricos na rede do cliente.
+   * Tentativas de reparo por assistências técnicas não autorizadas ou abertura do lacre de segurança.
+   * Desgaste natural de peças estéticas e baterias após o período regular de uso.
+   * Instalação de softwares piratas, vírus ou modificações não oficiais de sistema (firmwares/ROMs customizadas).
+12.3 Procedimento para Solicitação de Garantia
+1. O cliente entra em contato pelo e-mail suporte@novashop.com.br relatando o defeito com fotos e vídeos demonstrativos.
+2. A equipe de suporte emite um código de autorização de postagem gratuita para envio do item ao centro técnico da NovaShop.
+3. O produto passa por análise técnica no prazo máximo de 10 dias úteis a contar do recebimento.
+4. Comprovado o defeito de fabricação, o produto é reparado com peças originais ou trocado por uma unidade nova. Caso o modelo esteja esgotado, o cliente pode optar por um cupom de crédito no valor integral ou restituição do valor pago.
+ 
+13. GESTÃO DE ESTOQUE
+________________
+* Estoque em Tempo Real: O site reflete em tempo real o saldo do armazém. Um produto marcado como "Disponível" possui unidade física pronta para picking.
+* Produtos Esgotados: Quando o saldo atinge zero, a opção de compra é desabilitada e exibido o botão "Avise-me quando chegar". O cliente cadastrado recebe notificação automática assim que o item for reabastecido.
+* Reserva de Estoque: A reserva do produto no estoque só ocorre após a confirmação de pagamento do Pix/Cartão ou emissão do Boleto. Colocar o produto no carrinho de compras não garante a reserva do item.
+* Vendas Sob Encomenda: A NovaShop não opera com o modelo de vendas sob encomenda ou pre-venda sem estoque próprio presente no Centro de Distribuição.
+ 
+14. FRETE E LOGÍSTICA DE ENVIO
+________________
+* Fatores Determinantes: O valor do frete e o prazo de entrega variam exclusivamente em função do CEP de destino, peso bruto do produto (com embalagem), volume cúbico da caixa e modalidade escolhida (Expressa ou Padrão).
+* Rastreamento Integrado: A cada mudança de etapa (Coletado, Em Transferência, Em Rota de Entrega), o sistema dispara um e-mail de notificação com o link de rastreio direto da transportadora contratada. O cliente também pode acompanhar pelo painel "Meus Pedidos" na loja virtual.
+* Áreas com Restrição de Entrega: Algumas regiões podem ter prazos estendidos ou exigência de retirada na agência dos Correios mais próxima por determinação de segurança do transportador (Áreas com restrição operacional). Nestes casos, o cliente é notificado por e-mail e canal de rastreamento.
+ 
+15. SEGURANÇA E PRIVACIDADE DE DADOS
+________________
+A NovaShop adota os mais rigorosos padrões digitais de proteção de dados e privacidade, em integral conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+* Criptografia de Dados: O site opera com protocolo HTTPS e certificado de segurança SSL de 256 bits para todas as transações de dados cadastrais e de pagamento.
+* Tratamento de Dados Financeiros: Os dados de cartão de crédito são processados diretamente pelos gateways de pagamento homologados (PCI-DSS Compliant). A NovaShop não armazena números de cartão de crédito, códigos CVV ou senhas bancárias em seus servidores.
+* Uso dos Dados Pessoais: Nome, CPF, endereço e e-mail são utilizados estritamente para o processamento de pedidos, emissão de Notas Fiscais e comunicação logística. A NovaShop não comercializa nem compartilha dados de clientes com terceiros sem autorização prévia.
+* Proteção Antifraude: Todas as compras via cartão de crédito passam por análise algorítmica antifraude para proteção do próprio titular do cartão.
+ 
+16. FAQ INSTITUCIONAL (PERGUNTAS FREQUENTES)
+________________
+1. O que é a NovaShop?
+A NovaShop é um e-commerce brasileiro especializado em produtos de tecnologia e eletrônicos, operando com estoque 100% próprio a partir de seu Centro de Distribuição em Jundiaí/SP, garantindo curadoria técnica, garantia real e entrega em todo o Brasil.
+2. Onde a NovaShop entrega?
+Entregamos em todo o território nacional brasileiro, atendendo a todos os municípios cobertos pelos Correios e por nossas transportadoras parceiras.
+3. A NovaShop possui loja física?
+Não. A NovaShop é uma empresa 100% digital (Pure Play E-commerce). Nossas vendas são feitas exclusivamente pelo nosso site oficial.
+4. Quais formas de pagamento são aceitas?
+Aceitamos Pix (com 5% de desconto), Cartão de Crédito em até 10x sem juros (bandeiras Visa, Mastercard, Elo, Hipercard e Amex) e Boleto Bancário à vista.
+5. Como funciona o desconto do Pix?
+Ao selecionar a opção Pix no checkout, o desconto de 5% é aplicado automaticamente sobre o valor total dos produtos. O pagamento deve ser concluído dentro do prazo de 30 minutos via QR Code ou Chave Pix Copia e Cola.
+6. Qual é o prazo de entrega para o meu endereço?
+O prazo de entrega depende do seu CEP e da modalidade de frete escolhida (Expressa ou Padrão). Você pode simular o prazo exato diretamente na página do produto ou no carrinho de compras inserindo o seu CEP.
+7. Como acompanhar o rastreamento do meu pedido?
+Assim que o seu pedido é expedido, enviamos o código de rastreamento e o link da transportadora por e-mail. Você também pode acessar o painel "Meus Pedidos" em nosso site para visualizar as atualizações em tempo real.
+8. Como cancelar uma compra?
+Se o pedido ainda não tiver sido enviado, você pode solicitar o cancelamento diretamente no painel do cliente ou pelo e-mail suporte@novashop.com.br. Caso o pedido já esteja em transporte, recuse o recebimento no momento da entrega para que ele retorne ao nosso CD para estorno.
+9. Qual é o prazo para solicitar a devolução por arrependimento?
+O prazo legal é de até 7 (sete) dias corridos após a data de recebimento do produto, conforme estabelecido pelo Código de Defesa do Consumidor.
+10. Como funciona o processo de garantia em caso de defeito?
+Caso seu produto apresente defeito de fabricação dentro do prazo de garantia (12 meses para eletrônicos e 6 meses para acessórios), entre em contato via suporte@novashop.com.br com fotos/vídeos demonstrando o problema. Nossa equipe fornecerá um código de postagem gratuita para envio do item à análise técnica.
+11. O que fazer se o meu produto chegar com a caixa amassada ou violada?
+Recuse o recebimento imediatamente no momento da entrega e faça uma ressalva no comprovante da transportadora. Em seguida, notifique nossa equipe pelo e-mail de suporte para providenciarmos o reenvio.
+12. O que fazer se eu receber um produto diferente do que comprei?
+Entre em contato com a nossa Central de Atendimento no prazo de até 7 dias corridos após o recebimento. Forneceremos o código de logística reversa e enviaremos o produto correto sem custo adicional assim que o item incorreto for devolvido.
+13. Quanto tempo demora para o reembolso ser efetuado?
+Após o produto retornar ao nosso Centro de Distribuição e passar pela triagem técnica (até 3 dias úteis), o reembolso via Pix ocorre em até 2 dias úteis; via Boleto em até 3 dias úteis; e via Cartão de Crédito é solicitado imediatamente à administradora, constando em até 2 faturas.
+14. Como falar com um atendente humano da NovaShop?
+Nosso atendimento humano está disponível de segunda a sexta-feira, das 08:00 às 18:00, via chat integrado no site ou pelo e-mail suporte@novashop.com.br (com resposta em até 1 dia útil).
+ 
+17. GLOSSÁRIO CORPORATIVO E OPERACIONAL
+________________
+* SKU (Stock Keeping Unit): Código único de identificação atribuído a cada produto e sua variação para controle de estoque e picking no armazém.
+* Checkout: Etapa final do processo de compra em e-commerce, onde são informados os dados de entrega e efetuado o pagamento.
+* Picking: Processo de localização e coleta física dos produtos nas prateleiras do Centro de Distribuição após a confirmação da compra.
+* Packing: Etapa de conferência, proteção física com plástico bolha e embalagem final do produto para expedição.
+* Expedição: Setor e momento em que os volumes embalados são entregues às transportadoras para início do transporte.
+* Logística Reversa: Processo de recolhimento do produto no endereço do cliente ou autorização de postagem nos Correios para retorno do item ao Centro de Distribuição.
+* Estorno: Procedimento financeiro de devolução do valor pago pelo cliente em cartão de crédito ou conta bancária.
+* Gateway de Pagamento: Sistema tecnológico responsável por conectar a loja virtual às instituições financeiras e operadoras de cartão para autorização da compra.
+* CDC: Código de Defesa do Consumidor (Lei Federal nº 8.078/1990), conjunto de normas que regem as relações de consumo no Brasil.
+* NF-e (Nota Fiscal Eletrônica): Documento fiscal digital obrigatório que acoberta a circulação da mercadoria e garante a validade legal da compra e da garantia.
+* WMS (Warehouse Management System): Sistema de software de gestão responsável por otimizar o fluxo de armazenamento, separação e estoque do Centro de Distribuição.

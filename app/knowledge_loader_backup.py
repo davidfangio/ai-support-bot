@@ -46,30 +46,7 @@ def dividir_documentos(documentos):
             " ",
             "",
         ],
+        keep_separator=True,
     )
 
-    chunks_finais = []
-
-    for documento in documentos:
-        secoes = re.split(
-            r"(?m)(?=^\d+(?:\.\d+)?\. )",
-            documento.page_content,
-        )
-
-        for secao in secoes:
-            secao = secao.strip()
-
-            if not secao:
-                continue
-
-            documento_secao = type(
-                "Documento",
-                (),
-                {"page_content": secao, "metadata": documento.metadata},
-            )()
-
-            chunks_finais.extend(
-                splitter.split_documents([documento_secao])
-            )
-
-    return chunks_finais
+    return splitter.split_documents(documentos)

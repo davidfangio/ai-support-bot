@@ -30,3 +30,10 @@ print(chunks[meio].page_content[:500])
 
 print("\n--- EXEMPLO DE CHUNK FINAL ---")
 print(chunks[-1].page_content[:500])
+
+print("\n--- CHUNKS COM MENOS DE 100 CARACTERES ---")
+
+for i, chunk in enumerate(chunks):
+    if len(chunk.page_content) < 100:
+        print(f"\nChunk {i + 1} ({len(chunk.page_content)} caracteres):")
+        print(chunk.page_content)
