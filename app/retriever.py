@@ -8,7 +8,7 @@ def criar_retriever(indice, chunks):
     }
 
 
-def buscar(retriever, pergunta, k=3):
+def buscar(retriever, pergunta, k=3, distancia_maxima=None):
     indice = retriever["indice"]
     chunks = retriever["chunks"]
 
@@ -21,9 +21,14 @@ def buscar(retriever, pergunta, k=3):
     resultados = []
 
     for distancia, indice_chunk in zip(distancias[0], indices[0]):
+        distancia = float(distancia)
+
+        if distancia_maxima is not None and distancia > distancia_maxima:
+            continue
+
         resultados.append({
             "chunk": chunks[indice_chunk],
-            "distancia": float(distancia),
+            "distancia": distancia,
         })
 
     return resultados
