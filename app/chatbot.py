@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, APIConnectionError, APITimeoutError, RateLimitError, AuthenticationError
 from app.brain import carregar_cerebro
+import logging
 
 from app.knowledge_loader import carregar_documentos, dividir_documentos
 from app.embeddings import gerar_embeddings
@@ -8,6 +9,8 @@ from app.vector_store import criar_indice
 from app.retriever import criar_retriever, buscar
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 cliente = OpenAI()
 
@@ -71,9 +74,26 @@ def responder(mensagem):
     resultados = buscar(retriever, mensagem, k=3)
     prompt = montar_prompt(mensagem, resultados)
 
-    resposta = cliente.responses.create(
-        model="gpt-5.6-luna",
-        input=prompt,
-    )
+    try:
+        resposta = cliente.responses.create(
+            model="gpt-5.6-luna",
+            input=prompt,
+        )
 
-    return resposta.output_text
+        return resposta.output_text
+
+    except APIConnectionError:
+        return "Não foi possível conectar ao serviço de atendimento. Tente novamente em alguns instantes."
+
+    except APITimeoutError:
+        return "O serviço de atendimento demorou para responder. Tente novamente em alguns instantes."
+
+    except RateLimitError:
+        return "O serviço de atendimento está temporariamente sobrecarregado. Tente novamente em alguns instantes."
+
+    except AuthenticationError:
+        return "O serviço de atendimento está temporariamente indisponível. Tente novamente mais tarde."
+
+    except Exception:
+        logger.exception("Erro inesperado ao gerar resposta do Robbie.")
+        return "Ocorreu um erro inesperado no atendimento. Tente novamente em alguns instantes."

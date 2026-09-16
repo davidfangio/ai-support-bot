@@ -16,6 +16,12 @@ def chat():
 
     mensagem = dados["mensagem"]
 
+    if not isinstance(mensagem, str) or not mensagem.strip():
+        return "Robbie precisa de uma mensagem válida para responder.", 400
+
+    if len(mensagem) > 4000:
+        return "A mensagem excede o limite de 4000 caracteres.", 400
+    
     resposta = responder(mensagem)
 
     return resposta
