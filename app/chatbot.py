@@ -24,24 +24,43 @@ indice = criar_indice(embeddings)
 retriever = criar_retriever(indice, chunks)
 cerebro = carregar_cerebro()
 
-def montar_contexto(mensagem, resultados):
+def montar_contexto(mensagem, resultados, historico=None):
     contexto = []
 
     contexto.append("=== CÉREBRO DO ROBBIE ===")
     contexto.append(cerebro)
+
+    contexto.append("n=== HISTÓRICO DA CONVERSA ===")
+
+    if historico:
+        contexto.extend(historico)
 
     contexto.append("\n=== INFORMAÇÕES DA NOVASHOP ===")
 
     for resultado in resultados:
         contexto.append(resultado["chunk"].page_content)
 
+    if historico:
+        contexto.append("\n=== HISTÓRICO DA CONVERSA ===")
+        if isinstance(historico, str):
+            contexto.append(historico)
+        else:
+            for item in historico:
+                if isinstance(item, dict):
+                    papel = item.get("role", item.get("papel", "usuário"))
+                    conteudo = item.get("content", item.get("conteudo", ""))
+                    if conteudo:
+                        contexto.append(f"{papel}: {conteudo}")
+                elif item:
+                    contexto.append(str(item))
+
     contexto.append("\n=== PERGUNTA DO CLIENTE ===")
     contexto.append(mensagem)
 
     return "\n\n".join(contexto)
 
-def montar_prompt(mensagem, resultados):
-    contexto = montar_contexto(mensagem, resultados)
+def montar_prompt(mensagem, resultados, historico=None):
+    contexto = montar_contexto(mensagem, resultados, historico)
 
     prompt = f"""
 Você é Robbie, assistente virtual oficial da NovaShop.
@@ -70,9 +89,9 @@ Quando falar sobre garantia, nunca generalize o prazo. Identifique primeiro a ca
     return prompt
 
 
-def responder(mensagem):
+def responder(mensagem, historico=None):
     resultados = buscar(retriever, mensagem, k=3)
-    prompt = montar_prompt(mensagem, resultados)
+    prompt = montar_prompt(mensagem, resultados, historico)
 
     try:
         resposta = cliente.responses.create(
