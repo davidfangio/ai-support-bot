@@ -1,4 +1,4 @@
-from flask import Blueprint, request 
+from flask import Blueprint, request, render_template
 from app.chatbot import responder 
 import uuid 
 
@@ -8,11 +8,11 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def home ():
-    return "AI Support Bot Online."
+    return render_template("chat.html")
 
 @main.route("/chat", methods=["POST"])
 def chat():
-    dados = request.json
+    dados = request.get_json(silent=True)
 
     if not dados or "mensagem" not in dados:
         return "Robbie precisa de uma mensagem para responder.", 400
@@ -27,6 +27,11 @@ def chat():
 
     conversation_id = dados.get("conversation_id") or str(uuid.uuid4())
 
+    try:
+        uuid.UUID(conversation_id)
+    except (ValueError, AttributeError, TypeError):
+        return "conversation_id inválido.", 400
+
     if conversation_id not in conversas:
         conversas[conversation_id] = []
 
@@ -40,9 +45,9 @@ def chat():
     historico[:] = historico[-10:]
 
     return {
-    "conversation_id": conversation_id,
-    "resposta": resposta,
-}
+        "conversation_id": conversation_id,
+        "resposta": resposta,
+    }
 
 
 

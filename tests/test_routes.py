@@ -11,6 +11,19 @@ def test_chat_sem_mensagem():
     assert resposta.status_code == 400
     assert resposta.text == "Robbie precisa de uma mensagem para responder."
 
+def test_chat_json_invalido():
+    app = create_app()
+    client = app.test_client()
+
+    resposta = client.post(
+        "/chat",
+        data="isso nao e json",
+        content_type="application/json"
+    )
+
+    assert resposta.status_code == 400
+    assert resposta.text == "Robbie precisa de uma mensagem para responder."
+
 def test_chat_mensagem_vazia():
     app = create_app()
     client = app.test_client()
@@ -74,7 +87,7 @@ def test_home():
     resposta = client.get("/")
 
     assert resposta.status_code == 200
-    assert resposta.text == "AI Support Bot Online."
+    assert "Robbie" in resposta.text
 
 def test_conversa_nova_cria_conversation_id():
     app = create_app()
@@ -92,6 +105,21 @@ def test_conversa_nova_cria_conversation_id():
         dados = resposta.get_json()
         assert "conversation_id" in dados
         assert dados["conversation_id"] 
+
+def test_conversation_id_invalido():
+    app = create_app()
+    client = app.test_client()
+
+    resposta = client.post(
+        "/chat",
+        json={
+            "conversation_id": "nao-e-um-uuid",
+            "mensagem": "Olá, Robbie!"
+        }
+    )
+
+    assert resposta.status_code == 400
+    assert resposta.text == "conversation_id inválido."
 
 def test_conversa_reutiliza_historico():
     app = create_app()
@@ -112,7 +140,7 @@ def test_conversa_reutiliza_historico():
         primeira = client.post(
             "/chat",
             json={
-                "conversation_id": "teste-memoria",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440000",
                 "mensagem": "Olá!"
             }
         )
@@ -120,7 +148,7 @@ def test_conversa_reutiliza_historico():
         segunda = client.post(
             "/chat",
             json={
-                "conversation_id": "teste-memoria",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440000",
                 "mensagem": "Você lembra de mim?"
             }
         )
@@ -151,7 +179,7 @@ def test_conversas_sao_isoladas():
         client.post(
             "/chat",
             json={
-                "conversation_id": "conversa-a",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440001",
                 "mensagem": "Olá, sou o João."
             }
         )
@@ -159,7 +187,7 @@ def test_conversas_sao_isoladas():
         client.post(
             "/chat",
             json={
-                "conversation_id": "conversa-b",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440002",
                 "mensagem": "Olá, sou a Maria."
             }
         )
@@ -167,7 +195,7 @@ def test_conversas_sao_isoladas():
         client.post(
             "/chat",
             json={
-                "conversation_id": "conversa-a",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440001",
                 "mensagem": "Você lembra de mim?"
             }
         )
@@ -175,7 +203,7 @@ def test_conversas_sao_isoladas():
         client.post(
             "/chat",
             json={
-                "conversation_id": "conversa-b",
+                "conversation_id": "550e8400-e29b-41d4-a716-446655440002",
                 "mensagem": "E você lembra de mim?"
             }
         )
@@ -207,7 +235,7 @@ def test_historico_respeita_limite_de_10_entradas():
             client.post(
                 "/chat",
                 json={
-                    "conversation_id": "teste-limite",
+                    "conversation_id": "550e8400-e29b-41d4-a716-446655440003",
                     "mensagem": f"Mensagem {i}"
                 }
             )

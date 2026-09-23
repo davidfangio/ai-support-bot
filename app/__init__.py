@@ -1,11 +1,17 @@
 from flask import Flask
 from app.routes import main
+from pathlib import Path
 
 
 def create_app():
-    app = Flask(__name__)
+    base_dir = Path(__file__).resolve().parent.parent
+
+    app = Flask(
+        __name__,
+        template_folder=str(base_dir / "templates"),
+        static_folder=str(base_dir / "static"),
+    )
 
     app.register_blueprint(main)
 
     return app
-

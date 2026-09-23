@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robbie — NovaShop</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+</head>
+
+<body>
+
+    <main>
+        
+<header class="chat-header">
+    <div class="novashop-logo">
+        <span>NovaShop</span>
+    </div>
+
+    <div>
+        <h1>Robbie</h1>
+        <p>Assistente virtual</p>
+    </div>
+</header>
+
+        <section id="chat">
+            <!-- As mensagens aparecerão aqui -->
+        </section>
+
+        <form id="chat-form">
+            <input
+                type="text"
+                id="mensagem"
+                placeholder="Digite sua mensagem..."
+                autocomplete="off"
+                aria-label="Mensagem"
+                required
+            >
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+
+</html>

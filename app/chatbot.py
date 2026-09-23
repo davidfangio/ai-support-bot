@@ -30,8 +30,6 @@ def montar_contexto(mensagem, resultados, historico=None):
     contexto.append("=== CÉREBRO DO ROBBIE ===")
     contexto.append(cerebro)
 
-    contexto.append("n=== HISTÓRICO DA CONVERSA ===")
-
     if historico:
         contexto.extend(historico)
 
@@ -67,7 +65,7 @@ Você é Robbie, assistente virtual oficial da NovaShop.
 
 Siga rigorosamente as regras do seu cérebro e utilize apenas as informações disponíveis no contexto fornecido.
 
-NA base de conhecimento da NovaShop é sua única fonte de verdade.
+A base de conhecimento da NovaShop é sua única fonte de verdade.
 Seu conhecimento prévio ou conhecimento geral do mundo não deve ser usado para responder ao cliente.
 Responda somente quando a informação necessária estiver sustentada pelo contexto da NovaShop fornecido neste prompt.
 Se a resposta não estiver presente ou não puder ser sustentada pelo contexto, não tente completar a resposta usando conhecimento externo. Informe que não possui informação suficiente e siga as regras de escalonamento do seu cérebro.
