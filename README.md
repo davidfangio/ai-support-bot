@@ -1,181 +1,109 @@
 # 🤖 AI Support Bot — Robbie
 
-Assistente virtual inteligente desenvolvido para atendimento ao cliente da **NovaShop**, uma empresa fictícia de tecnologia criada para fins de demonstração e portfólio.
+Assistente virtual inteligente para atendimento ao cliente, desenvolvido como projeto de portfólio utilizando **Flask, RAG, embeddings, FAISS e OpenAI**.
 
-O projeto combina **Flask, Retrieval-Augmented Generation (RAG), embeddings, busca vetorial com FAISS e modelos da OpenAI** para criar um assistente capaz de responder perguntas com base em uma base de conhecimento controlada, mantendo também um histórico de conversa por sessão.
+O projeto simula o atendimento de uma loja virtual fictícia chamada **NovaShop**, permitindo que o Robbie responda perguntas com base em uma base de conhecimento específica da empresa, mantendo regras de comportamento e utilizando memória de conversa.
 
----
+## 🚀 Demonstração
 
-## 📌 Sobre o projeto
+**Robbie online:**
+https://ai-support-bot-production-8bdc.up.railway.app
 
-O Robbie foi desenvolvido com o objetivo de simular um sistema real de atendimento ao cliente utilizando Inteligência Artificial.
+O projeto está hospedado em produção utilizando **Railway**.
 
-Em vez de depender exclusivamente do conhecimento geral de um modelo de linguagem, o sistema recupera informações relevantes da base de conhecimento da NovaShop e utiliza esse conteúdo como contexto para gerar a resposta.
-
-Isso permite maior controle sobre as informações utilizadas pelo assistente e reduz o risco de respostas inventadas.
-
-### Principais características
-
-* 💬 Interface web de chat
-* 🧠 Base de comportamento do Robbie
-* 📚 Base de conhecimento da NovaShop
-* 🔎 Retrieval-Augmented Generation (RAG)
-* 🧩 Divisão da base em chunks
-* 🔢 Geração de embeddings
-* 🗂️ Busca vetorial com FAISS
-* 🧠 Memória de conversação
-* 🔐 Sanitização de conteúdo Markdown
-* 🛡️ Validação de entradas
-* ⚠️ Tratamento de erros da API
-* 🧪 Testes automatizados com pytest
+> A NovaShop é uma empresa fictícia criada exclusivamente para fins educacionais e de demonstração.
 
 ---
 
-# 🏗️ Arquitetura
+## 🎯 Objetivo
 
-O fluxo principal do sistema funciona da seguinte maneira:
+O objetivo do projeto é demonstrar a construção de um sistema de atendimento com IA capaz de:
 
-```text
-                    ┌──────────────────┐
-                    │     Cliente      │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │  Interface Web   │
-                    │ HTML / CSS / JS  │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │   Flask / API    │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │    Retriever     │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │      FAISS       │
-                    │ Busca vetorial   │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Contexto + RAG   │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │  OpenAI Model    │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │     Robbie       │
-                    └──────────────────┘
-```
+* consultar uma base de conhecimento;
+* recuperar informações semanticamente relevantes;
+* utilizar contexto para gerar respostas;
+* manter memória de conversa;
+* seguir regras comportamentais específicas;
+* evitar a invenção de informações;
+* identificar situações que exigem atendimento humano;
+* lidar com entradas inválidas;
+* funcionar através de uma interface web;
+* ser executado em ambiente de produção.
 
 ---
 
-# 🧠 Como funciona o RAG
-
-O Robbie não utiliza simplesmente a pergunta do cliente para gerar uma resposta.
-
-Primeiro, a pergunta passa pelo processo de recuperação de informação.
-
-### 1. Carregamento
-
-A base de conhecimento da NovaShop é carregada pelo sistema.
-
-### 2. Limpeza
-
-O conteúdo é normalizado para reduzir espaços e quebras de linha desnecessárias.
-
-### 3. Chunking
-
-O conteúdo é dividido em partes menores utilizando `RecursiveCharacterTextSplitter`.
+## 🧠 Arquitetura
 
 ```text
-Documento
-    ↓
-Seções
-    ↓
-Chunks
-    ↓
-Embeddings
-```
-
-O projeto utiliza:
-
-* `chunk_size = 1000`
-* `chunk_overlap = 200`
-
-### 4. Embeddings
-
-Cada chunk é transformado em uma representação vetorial utilizando:
-
-```text
-sentence-transformers
-```
-
-com o modelo:
-
-```text
-all-MiniLM-L6-v2
-```
-
-### 5. Busca vetorial
-
-Os embeddings são armazenados em um índice FAISS.
-
-Quando o cliente faz uma pergunta, ela também é transformada em embedding e comparada com os vetores existentes.
-
-Os chunks mais relevantes são recuperados.
-
-### 6. Construção do contexto
-
-O sistema combina:
-
-```text
+Cliente
+   ↓
+Interface Web
+   ↓
+POST /chat
+   ↓
+Flask
+   ↓
+responder()
+   ↓
+Retriever
+   ↓
+FAISS + Embeddings
+   ↓
+Contexto relevante
+   ↓
 Cérebro do Robbie
-        +
+   ↓
 Histórico da conversa
-        +
-Informações relevantes da NovaShop
-        +
-Pergunta atual
+   ↓
+Prompt
+   ↓
+OpenAI
+   ↓
+Resposta do Robbie
 ```
 
-Esse contexto é enviado ao modelo de linguagem.
+---
 
-### 7. Geração da resposta
+## 🔎 RAG — Retrieval-Augmented Generation
 
-O modelo gera a resposta respeitando as regras definidas para o Robbie e utilizando as informações recuperadas.
+O Robbie não depende apenas do conhecimento geral do modelo.
+
+Antes de gerar uma resposta, o sistema:
+
+1. carrega os documentos da NovaShop;
+2. limpa o conteúdo;
+3. divide os documentos em chunks;
+4. transforma os chunks em embeddings;
+5. armazena os vetores em um índice FAISS;
+6. transforma a pergunta do cliente em embedding;
+7. recupera os trechos semanticamente mais relevantes;
+8. combina esses trechos com o cérebro e o histórico da conversa;
+9. envia o contexto para o modelo;
+10. gera a resposta final.
+
+Isso permite que o Robbie responda de acordo com as informações específicas da NovaShop.
 
 ---
 
-# 🧩 Tecnologias
+## 🧩 Tecnologias
 
-| Tecnologia            | Utilização                                    |
-| --------------------- | --------------------------------------------- |
-| Python                | Linguagem principal                           |
-| Flask                 | Backend e API                                 |
-| OpenAI API            | Geração das respostas                         |
-| LangChain             | Processamento e divisão dos documentos        |
-| Sentence Transformers | Geração de embeddings                         |
-| FAISS                 | Busca vetorial                                |
-| NumPy                 | Manipulação dos vetores                       |
-| HTML                  | Estrutura da interface                        |
-| CSS                   | Estilização                                   |
-| JavaScript            | Comunicação com a API e comportamento do chat |
-| pytest                | Testes automatizados                          |
+| Tecnologia              | Função                       |
+| ----------------------- | ---------------------------- |
+| Python                  | Linguagem principal          |
+| Flask                   | API e aplicação web          |
+| OpenAI API              | Geração das respostas        |
+| LangChain               | Processamento dos documentos |
+| Sentence Transformers   | Geração de embeddings        |
+| FAISS                   | Busca vetorial               |
+| NumPy                   | Manipulação numérica         |
+| HTML / CSS / JavaScript | Interface                    |
+| pytest                  | Testes automatizados         |
+| Gunicorn                | Servidor de produção         |
+| Railway                 | Deploy e hospedagem          |
 
 ---
 
-# 📁 Estrutura do projeto
+## 📁 Estrutura do projeto
 
 ```text
 ai-support-bot/
@@ -197,7 +125,6 @@ ai-support-bot/
 ├── static/
 │   ├── css/
 │   │   └── style.css
-│   │
 │   └── js/
 │       └── chat.js
 │
@@ -205,51 +132,141 @@ ai-support-bot/
 │   └── chat.html
 │
 ├── tests/
-│   └── test_routes.py
 │
-├── .env
-├── .gitignore
-├── requirements.txt
 ├── run.py
+├── requirements.txt
 └── README.md
 ```
 
-> O arquivo `.env` contém configurações locais e não deve ser versionado.
+---
+
+## 🧠 Cérebro do Robbie
+
+O comportamento do Robbie é separado da lógica principal da aplicação.
+
+O arquivo:
+
+```text
+knowledge/Cérebro_Robbie.txt
+```
+
+define regras relacionadas a:
+
+* personalidade;
+* tom de comunicação;
+* limites de atuação;
+* segurança;
+* escalonamento para atendimento humano;
+* tratamento de informações ausentes;
+* regras de garantia;
+* proteção de dados;
+* situações em que Robbie não deve assumir que uma ação foi realizada.
+
+Essa separação permite alterar o comportamento do assistente sem modificar a arquitetura principal da aplicação.
 
 ---
 
-# ⚙️ Instalação
+## 📚 Base de conhecimento
+
+A base da NovaShop funciona como **Single Source of Truth** para as respostas do assistente.
+
+O Robbie deve:
+
+* utilizar as informações disponíveis na base;
+* evitar inventar informações;
+* deixar explícita a falta de informação quando necessário;
+* não afirmar que realizou ações que não foram executadas;
+* encaminhar situações que exigem intervenção humana.
+
+A base de conhecimento é composta por:
+
+```text
+NovaShop_Base.txt
+Cérebro_Robbie.txt
+```
+
+---
+
+## 💬 Memória de conversa
+
+O sistema utiliza um `conversation_id` para identificar uma conversa.
+
+O histórico é armazenado durante a execução da aplicação e enviado novamente ao modelo como contexto.
+
+Atualmente, o histórico mantém as últimas **10 entradas**, correspondendo aproximadamente a 5 interações completas entre cliente e Robbie.
+
+### Limitação atual
+
+A memória utiliza armazenamento em processo (`dict`) e, portanto:
+
+* é perdida quando a aplicação reinicia;
+* não é compartilhada entre múltiplas instâncias;
+* não representa uma solução de persistência para produção em escala.
+
+Uma evolução natural seria utilizar Redis ou um banco de dados.
+
+---
+
+## 🛡️ Validação e segurança
+
+A API valida:
+
+* ausência de mensagem;
+* JSON inválido;
+* mensagem vazia;
+* tipo inválido;
+* mensagens acima de 4000 caracteres;
+* `conversation_id` inválido;
+* isolamento entre conversas.
+
+O frontend também utiliza sanitização de conteúdo antes de renderizar respostas formatadas.
+
+Informações sensíveis, como senhas, CVV, números completos de cartão e códigos de autenticação, não devem ser solicitadas pelo assistente.
+
+---
+
+## 🧪 Testes
+
+O projeto possui testes automatizados utilizando `pytest`.
+
+Estado atual:
+
+```text
+12 passed
+```
+
+Os testes cobrem:
+
+* validação de entrada;
+* mensagens inválidas;
+* mensagens válidas;
+* criação de conversas;
+* reutilização de histórico;
+* isolamento de conversas;
+* limite de histórico;
+* carregamento da página inicial.
+
+---
+
+## ⚙️ Instalação local
 
 Clone o repositório:
 
 ```bash
 git clone https://github.com/davidfangio/ai-support-bot.git
-```
-
-Entre no diretório:
-
-```bash
 cd ai-support-bot
 ```
 
-Crie um ambiente virtual:
+Crie o ambiente virtual:
 
 ```bash
 python3 -m venv .venv
 ```
 
-Ative o ambiente virtual:
-
-### macOS / Linux
+Ative:
 
 ```bash
 source .venv/bin/activate
-```
-
-### Windows
-
-```bash
-.venv\Scripts\activate
 ```
 
 Instale as dependências:
@@ -258,170 +275,100 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
----
+Crie um arquivo `.env`:
 
-# 🔑 Configuração
-
-Crie um arquivo `.env` na raiz do projeto:
-
-```env
+```text
 OPENAI_API_KEY=sua_chave_aqui
 ```
 
-A chave da API deve ser mantida em segredo e nunca deve ser publicada no GitHub.
-
----
-
-# ▶️ Executando o projeto
-
-Com o ambiente virtual ativado:
+Execute:
 
 ```bash
 python run.py
 ```
 
-O servidor Flask será iniciado localmente.
+A aplicação ficará disponível localmente em:
 
-Abra o endereço informado pelo Flask no navegador para acessar a interface do Robbie.
+```text
+http://127.0.0.1:5000
+```
 
 ---
 
-# 🧪 Testes
+## 🚀 Deploy
 
-O projeto possui testes automatizados para validar o comportamento da API.
-
-Execute:
+O projeto está configurado para execução em produção utilizando **Gunicorn**:
 
 ```bash
-pytest
+gunicorn run:app
 ```
 
-O conjunto atual possui **12 testes automatizados** cobrindo, entre outros pontos:
+A aplicação está hospedada no Railway.
 
-* mensagens ausentes;
-* mensagens vazias;
-* tipos inválidos;
-* limite de caracteres;
-* respostas válidas;
-* criação de identificadores de conversa;
-* reutilização do histórico;
-* isolamento entre conversas;
-* limite do histórico.
-
-Resultado atual:
+A versão de produção utiliza:
 
 ```text
-12 passed
+Python 3.12
 ```
 
 ---
 
-# 🛡️ Validações e tratamento de erros
+## ⚠️ Limitações atuais
 
-A API possui algumas proteções básicas para evitar entradas inválidas.
+O projeto é uma aplicação de portfólio e possui algumas limitações intencionais:
 
-Entre elas:
-
-* validação do JSON recebido;
-* validação do campo `mensagem`;
-* rejeição de mensagens vazias;
-* limite de 4000 caracteres;
-* identificação de conversas;
-* isolamento do histórico;
-* tratamento de erros de conexão;
-* tratamento de timeout;
-* tratamento de limite de requisições;
-* tratamento de autenticação da API.
-
-O frontend também utiliza sanitização de HTML para reduzir riscos ao renderizar respostas em Markdown.
-
----
-
-# 🧠 Memória de conversação
-
-Cada conversa recebe um identificador:
-
-```text
-conversation_id
-```
-
-Esse identificador permite que o backend mantenha o histórico associado àquela conversa.
-
-O histórico é limitado às últimas **10 entradas**, evitando crescimento indefinido da memória durante uma sessão.
-
-A implementação atual utiliza memória em processo (`dict`), sendo adequada para demonstração e desenvolvimento, mas não para uma arquitetura distribuída de produção.
-
----
-
-# ⚠️ Limitações atuais
-
-Este projeto foi desenvolvido como demonstração técnica e projeto de portfólio.
-
-Algumas limitações são intencionais:
-
-* A memória das conversas é mantida apenas em memória.
-* O histórico é perdido quando a aplicação é reiniciada.
-* O sistema ainda não utiliza banco de dados.
-* Não existe autenticação de usuários.
-* O escalonamento para atendimento humano é representado pelas regras do assistente, não por uma integração real com uma equipe de suporte.
-* O índice vetorial é criado durante a inicialização da aplicação.
-* O projeto utiliza uma única instância do processo para manter o estado das conversas.
+* memória armazenada apenas em processo;
+* ausência de autenticação de usuários;
+* ausência de banco de dados;
+* ausência de integração com pedidos reais;
+* ausência de ferramentas para consulta de estoque em tempo real;
+* ausência de integração com sistemas de atendimento humano;
+* índice vetorial reconstruído durante a inicialização;
+* aplicação configurada para uma única instância.
 
 Esses pontos representam possíveis evoluções futuras.
 
 ---
 
-# 🚀 Possíveis evoluções
+## 🔮 Possíveis evoluções
 
-Entre as próximas melhorias possíveis estão:
+Entre as próximas evoluções possíveis estão:
 
-* Persistência de conversas em banco de dados.
-* Autenticação de usuários.
-* Sistema real de escalonamento para atendimento humano.
-* Interface administrativa.
-* Observabilidade e logging estruturado.
-* Cache do índice vetorial.
-* Pipeline separado para ingestão da base de conhecimento.
-* Deploy com múltiplos workers.
-* Streaming das respostas do modelo.
-* Sistema de avaliação automática das respostas.
-* Métricas de qualidade do RAG.
-
----
-
-# 🎯 Objetivo do projeto
-
-O objetivo principal deste projeto é demonstrar, de forma prática, a construção de uma aplicação de atendimento baseada em Inteligência Artificial utilizando técnicas modernas de recuperação de conhecimento e geração de linguagem.
-
-Mais do que apenas integrar uma API de LLM, o projeto busca demonstrar conceitos como:
-
-```text
-Backend
-   +
-APIs
-   +
-RAG
-   +
-Embeddings
-   +
-Busca vetorial
-   +
-Memória
-   +
-Validação
-   +
-Testes
-   +
-Interface Web
-```
+* Redis para memória persistente;
+* banco de dados para conversas;
+* autenticação;
+* painel administrativo;
+* integração com pedidos;
+* consulta de estoque em tempo real;
+* integração com sistemas de atendimento;
+* observabilidade e métricas;
+* rate limiting;
+* streaming de respostas;
+* avaliação automática da qualidade do RAG;
+* testes de integração;
+* containerização com Docker.
 
 ---
 
-# 📄 Observação
+## 🎓 Objetivo de portfólio
 
-A **NovaShop** e o personagem **Robbie** são fictícios e foram criados exclusivamente para este projeto de demonstração e portfólio.
+Este projeto foi desenvolvido para demonstrar conhecimentos em:
 
-Nenhuma informação comercial apresentada pela NovaShop representa uma empresa real.
+* desenvolvimento backend com Python;
+* construção de APIs;
+* integração com modelos de linguagem;
+* RAG;
+* embeddings;
+* busca vetorial;
+* engenharia de prompts;
+* gerenciamento de contexto;
+* memória conversacional;
+* validação de entradas;
+* testes automatizados;
+* frontend básico;
+* segurança;
+* deploy de aplicações;
+* arquitetura de software.
 
 ---
 
@@ -429,4 +376,4 @@ Nenhuma informação comercial apresentada pela NovaShop representa uma empresa 
 
 **David Fangio**
 
-Projeto desenvolvido como parte do portfólio de desenvolvimento e Ciência de Dados.
+Projeto desenvolvido como parte da construção de um portfólio profissional em desenvolvimento de software, dados e inteligência artificial.
