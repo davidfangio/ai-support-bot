@@ -4,6 +4,8 @@ Assistente virtual inteligente para atendimento ao cliente, desenvolvido como pr
 
 O projeto simula o atendimento de uma loja virtual fictícia chamada **NovaShop**, permitindo que o Robbie responda perguntas com base em uma base de conhecimento específica da empresa, mantendo regras de comportamento e utilizando memória de conversa.
 
+> **English summary:** Robbie is a customer-support chatbot built as a portfolio project for a fictional online store (NovaShop). It uses Retrieval-Augmented Generation (RAG) with sentence embeddings, FAISS vector search and the OpenAI API, and includes conversation memory, behavior rules kept separate from the code, human-escalation rules and automated tests (pytest). Built with Python and Flask, and deployed on Railway.
+
 ## 🚀 Demonstração
 
 **Robbie online:**
@@ -12,6 +14,8 @@ https://ai-support-bot-production-8bdc.up.railway.app
 O projeto está hospedado em produção utilizando **Railway**.
 
 > A NovaShop é uma empresa fictícia criada exclusivamente para fins educacionais e de demonstração.
+
+> **Sobre a demo:** ela funciona com créditos pré-pagos limitados da API da OpenAI. Se o Robbie parar de responder, os créditos podem ter acabado.
 
 ---
 
@@ -131,7 +135,9 @@ ai-support-bot/
 ├── templates/
 │   └── chat.html
 │
-├── tests/
+├── tests/                      # testes automatizados (pytest)
+│
+├── test_*.py                   # scripts de teste avulsos, na raiz do projeto
 │
 ├── run.py
 ├── requirements.txt
@@ -246,6 +252,12 @@ Os testes cobrem:
 * limite de histórico;
 * carregamento da página inicial.
 
+Para executar:
+
+```bash
+pytest
+```
+
 ---
 
 ## ⚙️ Instalação local
@@ -324,7 +336,8 @@ O projeto é uma aplicação de portfólio e possui algumas limitações intenci
 * ausência de ferramentas para consulta de estoque em tempo real;
 * ausência de integração com sistemas de atendimento humano;
 * índice vetorial reconstruído durante a inicialização;
-* aplicação configurada para uma única instância.
+* aplicação configurada para uma única instância;
+* demo com créditos limitados da API da OpenAI.
 
 Esses pontos representam possíveis evoluções futuras.
 
@@ -374,6 +387,6 @@ Este projeto foi desenvolvido para demonstrar conhecimentos em:
 
 ## 👨‍💻 Autor
 
-**David Fangio**
+**David Assunção Lopes** · [LinkedIn](https://www.linkedin.com/in/david-assun%C3%A7%C3%A3o-lopes-115008171/) · [GitHub](https://github.com/davidfangio)
 
 Projeto desenvolvido como parte da construção de um portfólio profissional em desenvolvimento de software, dados e inteligência artificial.
