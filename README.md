@@ -4,7 +4,7 @@ Assistente virtual inteligente para atendimento ao cliente, desenvolvido como pr
 
 O projeto simula o atendimento de uma loja virtual fictícia chamada **NovaShop**, permitindo que o Robbie responda perguntas com base em uma base de conhecimento específica da empresa, mantendo regras de comportamento e utilizando memória de conversa.
 
-> **English summary:** Robbie is a customer-support chatbot built as a portfolio project for a fictional online store (NovaShop). It uses Retrieval-Augmented Generation (RAG) with sentence embeddings, FAISS vector search and the OpenAI API, and includes conversation memory, behavior rules kept separate from the code, human-escalation rules and automated tests (pytest). Built with Python and Flask, and deployed on Railway.
+> **English summary:** Robbie is a customer-support chatbot built as a portfolio project for a fictional online store (NovaShop). It uses Retrieval-Augmented Generation (RAG) with sentence embeddings, FAISS vector search and the OpenAI API, and includes conversation memory, behavior rules kept separate from the code, rules that guide customers to human support (prompt-based, no ticketing integration) and automated tests (pytest). Built with Python and Flask, and deployed on Railway.
 
 ## 🚀 Demonstração
 
@@ -16,6 +16,13 @@ O projeto está hospedado em produção utilizando **Railway**.
 > A NovaShop é uma empresa fictícia criada exclusivamente para fins educacionais e de demonstração.
 
 > **Sobre a demo:** ela funciona com créditos pré-pagos limitados da API da OpenAI. Se o Robbie parar de responder, os créditos podem ter acabado.
+
+> **Escopo desta versão:** o foco é demonstrar que o Robbie responde perguntas sobre a loja com base em uma base de conhecimento (RAG), sem inventar informações. O encaminhamento para atendimento humano é, por enquanto, uma orientação dada pelo assistente. **O próximo passo planejado é implementar o escalonamento para atendimento humano.**
+
+### 💬 Exemplos de conversa
+
+![Exemplo de conversa com o Robbie](docs/conversa-robbie.png)
+![Outro exemplo de conversa com o Robbie](docs/conversa-robbie2.png)
 
 ---
 
@@ -29,7 +36,7 @@ O objetivo do projeto é demonstrar a construção de um sistema de atendimento 
 * manter memória de conversa;
 * seguir regras comportamentais específicas;
 * evitar a invenção de informações;
-* identificar situações que exigem atendimento humano;
+* orientar o cliente a buscar atendimento humano quando o caso foge do que o assistente pode resolver (regra definida no prompt, sem integração com sistema de atendimento);
 * lidar com entradas inválidas;
 * funcionar através de uma interface web;
 * ser executado em ambiente de produção.
@@ -162,7 +169,7 @@ define regras relacionadas a:
 * tom de comunicação;
 * limites de atuação;
 * segurança;
-* escalonamento para atendimento humano;
+* orientação para atendimento humano (o Robbie indica que uma pessoa deve assumir o caso);
 * tratamento de informações ausentes;
 * regras de garantia;
 * proteção de dados;
@@ -182,7 +189,7 @@ O Robbie deve:
 * evitar inventar informações;
 * deixar explícita a falta de informação quando necessário;
 * não afirmar que realizou ações que não foram executadas;
-* encaminhar situações que exigem intervenção humana.
+* orientar o cliente a procurar atendimento humano quando necessário.
 
 A base de conhecimento é composta por:
 
@@ -334,7 +341,7 @@ O projeto é uma aplicação de portfólio e possui algumas limitações intenci
 * ausência de banco de dados;
 * ausência de integração com pedidos reais;
 * ausência de ferramentas para consulta de estoque em tempo real;
-* ausência de integração com sistemas de atendimento humano;
+* o encaminhamento para atendimento humano é apenas uma orientação dada pelo assistente: não há fila, ticket nem integração com sistemas de atendimento;
 * índice vetorial reconstruído durante a inicialização;
 * aplicação configurada para uma única instância;
 * demo com créditos limitados da API da OpenAI.
@@ -347,13 +354,13 @@ Esses pontos representam possíveis evoluções futuras.
 
 Entre as próximas evoluções possíveis estão:
 
+* escalonamento para atendimento humano integrado a um sistema de atendimento (fila ou tickets);
 * Redis para memória persistente;
 * banco de dados para conversas;
 * autenticação;
 * painel administrativo;
 * integração com pedidos;
 * consulta de estoque em tempo real;
-* integração com sistemas de atendimento;
 * observabilidade e métricas;
 * rate limiting;
 * streaming de respostas;
